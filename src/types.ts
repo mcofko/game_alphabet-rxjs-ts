@@ -23,4 +23,5 @@ export interface State {
   score: number;
   letters: Letter[];
   level: number;
+  lvlThreshold: number;
 }

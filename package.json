@@ -1,7 +1,7 @@
 {
-  "name": "game_snake-rxjs-ts",
+  "name": "game_alphabet-rxjs-ts",
   "version": "0.0.1",
-  "description": "Snake built with RxJS",
+  "description": "Alphaber Invasion built with RxJS",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --watch --content-base src/",
@@ -9,7 +9,7 @@
     "build:prod": "webpack --config webpack.config.js -p"
   },
   "keywords": [
-    "snake",
+    "game",
     "games",
     "reactive",
     "rxjs",

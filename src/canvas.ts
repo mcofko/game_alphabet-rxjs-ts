@@ -1,4 +1,5 @@
-import { Scene, Point2D } from './types';
+import { Scene, Point2D, State } from './types';
+import { END_THRESHOLD, GAME_WIDTH } from './constants';
 
 export const COLS = 30;
 export const ROWS = 30;
@@ -6,6 +7,27 @@ export const GAP_SIZE = 1;
 export const CELL_SIZE = 10;
 export const CANVAS_WIDTH = COLS * (CELL_SIZE + GAP_SIZE);
 export const CANVAS_HEIGHT = ROWS * (CELL_SIZE + GAP_SIZE);
+
+
+// *******************************************************
+
+export const renderGame = (state: State) => (
+  (document.body.innerHTML = `Score: ${state.score}, Level: ${state.level} <br/>`),
+  state.letters.forEach(
+    l =>
+      (document.body.innerHTML += '&nbsp'.repeat(l.yPos) + l.letter + '<br/>')
+  ),
+  (document.body.innerHTML +=
+    '<br/>'.repeat(END_THRESHOLD - (state.letters.length - 1)) +
+    '-'.repeat(GAME_WIDTH))
+);
+export const renderGameOverLite = () => (document.body.innerHTML += '<br/>GAME OVER!');
+export const noop = () => {};
+
+// *******************************************************
+
+
+
 
 export function createCanvasElement() {
   const canvas = document.createElement('canvas');
